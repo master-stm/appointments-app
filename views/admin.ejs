@@ -1,0 +1,33 @@
+<%- include ('partials/header') %>
+
+
+
+<% if(foundAppointments.length === 0){ %>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">No ppointemnts today</h1>
+        <p class="lead">connect with your customers</p>
+    </div>
+</div>
+<% } else{ %>
+<% foundAppointments.forEach((item,index) => { %>
+<div class="card my-4" style="width: 30%; margin: auto;">
+    <div class="card-header">
+        Appointemnt #<%= index+1%>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><%= item.name %> </h5>
+        <p class="card-text">has booked for an appointment on <strong> <%= item.date %> </strong> at
+            <strong> <%= item.time %></strong></p>
+        <p class="card-text">for contact <a href="mailto:<%= item.email %> "> <%= item.email %> </a> </p>
+        <a href="/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
+    </div>
+</div>
+<% }) %>
+<% } %>
+
+
+
+
+
+<%- include ('partials/scripts') %>

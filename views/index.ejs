@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<%- include ('partials/header') %>
+
+<body>
+    <div class="container my-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Schedule an Appointment</div>
+            <div class="panel-body">
+                <form action="/" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Full Name</label>
+                                <input type="text" class="form-control" name="name" autocomplete="off" id="name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Email</label>
+                                <input type="text" class="form-control" name="email" autocomplete="off" id="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Appointment Date</label>
+                                <input type="date" class="form-control" id="date" name="date" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class='col-md-6'>
+                            <div class="form-group">
+                                <label class="control-label">Appointment Time</label>
+
+                                <div class='input-group' style="width: 100%;">
+                                    <input type="time" name='time' autocomplete="off" class="form-control"
+                                        data-time-format="H:i" data-step="30" data-min-time="10:00"
+                                        data-max-time="18:00" data-show-2400="true" />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include ('partials/scripts') %>
+
+</body>
+
+</html>
