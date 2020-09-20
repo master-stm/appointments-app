@@ -67,9 +67,6 @@ app.get('/delete/:id', async (req, res) => {
     res.redirect('/admin')
 })
 
-const port = 5050
-app.listen(port, () => {
-    console.log(`http://localhost:${port}`)
-    console.log(`http://localhost:${port}/admin`)
-})
+const port = process.env.PORT || 5050
+app.listen(port, () => {console.log(`Port is :${port}`)})
 
