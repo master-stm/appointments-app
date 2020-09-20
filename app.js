@@ -8,9 +8,10 @@ app.set('view engine', 'ejs');
 
 //mongoose database connection
 
-const URI = 'mongodb://localhost:27017/appointmentsDB'
+const localURI = 'mongodb://localhost:27017/appointmentsDB'
+const remoteURI = 'mongodb+srv://admin:Admin@cluster0.p4ksv.gcp.mongodb.net/appointmentsDB?retryWrites=true&w=majority'
 
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+mongoose.connect(remoteURI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     console.log("Connected to Database");
 }).catch((err) => {
     console.log("ERROR connecting to database => ", err);
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
 
-    const { name, email,mobile, date, time } = req.body
+    const { name, email, mobile, date, time } = req.body
 
     const newAppointment = Appointment({
         name: name,
