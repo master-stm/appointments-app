@@ -10,16 +10,22 @@
             <div class="panel-body">
                 <form action="/" method="post">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Full Name</label>
                                 <input type="text" class="form-control" name="name" autocomplete="off" id="name">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="control-label">Email</label>
                                 <input type="text" class="form-control" name="email" autocomplete="off" id="email">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Mobile number</label>
+                                <input type="number" class="form-control" name="mobile" autocomplete="off" id="mobile">
                             </div>
                         </div>
                     </div>
@@ -36,8 +42,7 @@
 
                                 <div class='input-group' style="width: 100%;">
                                     <input type="time" name='time' autocomplete="off" class="form-control"
-                                        data-time-format="H:i" data-step="30" data-min-time="10:00"
-                                        data-max-time="18:00" data-show-2400="true" />
+                                    data-time-format="H:i" min="09:00" max="18:00" data-show-2400="true" />
 
                                 </div>
                             </div>
@@ -48,7 +53,7 @@
             </form>
         </div>
     </div>
-
+   
     <%- include ('partials/scripts') %>
 
 </body>

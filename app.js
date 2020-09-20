@@ -27,11 +27,12 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
 
-    const { name, email, date, time } = req.body
+    const { name, email,mobile, date, time } = req.body
 
     const newAppointment = Appointment({
         name: name,
         email: email,
+        mobile: mobile,
         date: date,
         time: time
     });
@@ -66,6 +67,8 @@ app.get('/delete/:id', async (req, res) => {
 })
 
 const port = 5050
-app.listen(port, () => console.log(`http://localhost:${port}`))
+app.listen(port, () => {
+    console.log(`http://localhost:${port}`)
+    console.log(`http://localhost:${port}/admin`)
+})
 
-app.listen
