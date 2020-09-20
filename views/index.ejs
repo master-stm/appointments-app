@@ -4,55 +4,57 @@
 <%- include ('partials/header') %>
 
 <body>
-    <div class="container my-4">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Schedule an Appointment</div>
-            <div class="panel-body">
-                <form action="/" method="post">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="control-label">Full Name</label>
-                                <input type="text" class="form-control" name="name" autocomplete="off" id="name">
+    <div class="imgDiv">
+        <div class="container my-4">
+            <div class="panel-primary">
+                <div class="labels">Schedule an Appointment</div>
+                <div class="panel-body">
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label labels">Full Name</label>
+                                    <input type="text" class="form-control" name="name" autocomplete="off" id="name">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="control-label">Email</label>
-                                <input type="text" class="form-control" name="email" autocomplete="off" id="email">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label labels">Email</label>
+                                    <input type="text" class="form-control" name="email" autocomplete="off" id="email">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="control-label">Mobile number</label>
-                                <input type="number" class="form-control" name="mobile" autocomplete="off" id="mobile">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Appointment Date</label>
-                                <input type="date" class="form-control" id="date" name="date" autocomplete="off">
-                            </div>
-                        </div>
-                        <div class='col-md-6'>
-                            <div class="form-group">
-                                <label class="control-label">Appointment Time</label>
-
-                                <div class='input-group' style="width: 100%;">
-                                    <input type="time" name='time' autocomplete="off" class="form-control"
-                                    data-time-format="H:i" min="09:00" max="18:00" data-show-2400="true" />
-
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="control-label labels">Mobile number</label>
+                                    <input type="number" class="form-control" name="mobile" autocomplete="off" id="mobile">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <input type="submit" class="btn btn-primary" value="Submit">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label labels">Appointment Date</label>
+                                    <input type="date" class="form-control" id="date" name="date" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class='col-md-6'>
+                                <div class="form-group">
+                                    <label class="control-label labels">Appointment Time</label>
+    
+                                    <div class='input-group' style="width: 100%;">
+                                        <input type="time" name='time' autocomplete="off" class="form-control"
+                                        data-time-format="H:i" min="09:00" max="18:00" data-show-2400="true" />
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+                </form>
             </div>
-            </form>
         </div>
-    </div>
+      </div>
    
     <%- include ('partials/scripts') %>
 
