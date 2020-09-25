@@ -51,13 +51,18 @@
                             </div>
                             <div class='col-md-4'>
                                 <div class="form-group">
-                                    <label class="control-label labels">Bokningstid</label>
+                                    <label class="control-label labels">Bokningstid</label><br>
+                                    <div class="timeInputDiv">
+                                        <input class="timeInput" name='hour' type="number" min="9" max="17" value="9">:
+                                        <input class="timeInput" name='minute' type="number" step="15" min="0" max="59"
+                                            value="00">
+                                    </div>
 
+                                    <!-- 
                                     <div class='input-group' style="width: 100%;">
                                         <input type="time" name='time' autocomplete="off" class="form-control"
-                                            data-time-format="H:i" min="09:00" max="18:00" data-show-2400="true" />
-
-                                    </div>
+                                            step="900" value="HH:mm" min="09:00" max="18:00" show-2400="true" />
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

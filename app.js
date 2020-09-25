@@ -29,7 +29,9 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
 
-    const { name, email, mobile, salong, date, time } = req.body
+    const { name, email, mobile, salong, date, hour, minute } = req.body
+
+    const time = `${hour}:${minute}`
 
     const newAppointment = Appointment({
         name: name,
