@@ -21,6 +21,7 @@ mongoose.connect(remoteURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+app.use('/admin', require('./routes/admin'))
 
 // make appointment page
 app.get('/', (req, res) => {
@@ -28,12 +29,13 @@ app.get('/', (req, res) => {
 });
 app.post('/', (req, res) => {
 
-    const { name, email, mobile, date, time } = req.body
+    const { name, email, mobile, salong, date, time } = req.body
 
     const newAppointment = Appointment({
         name: name,
         email: email,
         mobile: mobile,
+        salong: salong,
         date: date,
         time: time
     });
@@ -47,26 +49,8 @@ app.post('/', (req, res) => {
     res.render('index');
 });
 
-
-// admin page - view appointments
-app.get('/admin', async (req, res) => {
-    const foundAppointments = await Appointment.find({})
-    res.render('admin', { foundAppointments })
-})
-
-app.get('/delete/:id', async (req, res) => {
-    await Appointment.findOneAndDelete({ _id: req.params.id }, function (err, docs) {
-        if (err) {
-            console.log(err)
-        }
-        else {
-            console.log(`${docs.name} appointment was deleted`)
-        }
-    });
-
-    res.redirect('/admin')
-})
+// http://localhost:5050
 
 const port = process.env.PORT || 5050
-app.listen(port, () => {console.log(`Port is :${port}`)})
+app.listen(port, () => { console.log(`Port is :${port}`) })
 

@@ -6,6 +6,7 @@ const appointmentSchema = new mongoose.Schema({
     name: String,
     email: String,
     mobile: String,
+    salong: String,
     date: String,
     time: String
 });

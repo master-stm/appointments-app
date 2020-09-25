@@ -16,12 +16,13 @@
         Appointemnt #<%= index+1%>
     </div>
     <div class="card-body">
+        <h5 class="card-title">Welcome <strong><%= item.salong %></strong> </h5>
         <h5 class="card-title"><strong><%= item.name %></strong> </h5>
         <p class="card-text">has booked for an appointment on <strong> <%= item.date %> </strong> at
             <strong> <%= item.time %></strong></p>
         <p class="card-text">to contact call <strong><%= item.mobile %></strong> </p>
-        <p class="card-text">or send an email: <a href="mailto:<%= item.email %> "> <%= item.email %> </a>  </p>
-        <a href="/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
+        <p class="card-text">or send an email: <a href="mailto:<%= item.email %> "> <%= item.email %> </a> </p>
+        <a href="/admin/delete/<%= item._id %>" class="btn btn-danger">Delete</a>
     </div>
 </div>
 <% }) %>
